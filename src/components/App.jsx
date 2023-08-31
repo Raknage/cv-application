@@ -7,7 +7,7 @@ function App() {
 
   const handleChange = (e) => {
     console.log(basicInfo);
-    setBasicInfo({ ...basicInfo, name: e.target.value });
+    setBasicInfo({ ...basicInfo, [e.target.name]: e.target.value });
   };
 
   return (
@@ -30,7 +30,8 @@ function App() {
             id="email"
             autoComplete="email"
             placeholder="e-Mail"
-            value=""
+            value={basicInfo.email}
+            onChange={handleChange}
           />
           <input
             type="tel"
@@ -38,7 +39,8 @@ function App() {
             id="tel"
             autoComplete="tel"
             placeholder="Telephone"
-            value=""
+            value={basicInfo.tel}
+            onChange={handleChange}
           />
           <button
             className="rounded-2xl bg-purple-500 px-4 py-1 ring-2 hover:ring-yellow-500 active:bg-yellow-500"
