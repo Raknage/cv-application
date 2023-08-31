@@ -15,15 +15,18 @@ function App() {
       <form className="">
         <fieldset className="flex flex-col items-center gap-2">
           <legend className="m-2 text-lg font-bold">Basic information:</legend>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            autoComplete="name"
-            placeholder="Full Name"
-            value={basicInfo.name}
-            onChange={handleChange}
-          />
+          <label htmlFor="name">
+            Full name:
+            <input
+              type="text"
+              name="name"
+              id="name"
+              autoComplete="name"
+              placeholder="Full Name"
+              value={basicInfo.name}
+              onChange={handleChange}
+            />
+          </label>
           <input
             type="email"
             name="email"
